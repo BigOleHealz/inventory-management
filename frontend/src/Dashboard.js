@@ -1,5 +1,117 @@
+// import React, { useEffect, useState } from 'react';
+// import { FaHome, FaBox, FaChartBar, FaCog } from 'react-icons/fa';
+// import { Doughnut, Line, Bar } from 'react-chartjs-2';
+// import {
+//   Chart as ChartJS,
+//   ArcElement,
+//   CategoryScale,
+//   LinearScale,
+//   BarElement,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+// } from 'chart.js';
+// import './Dashboard.css';
+
+// // Register elements and scales
+// ChartJS.register(
+//   ArcElement,
+//   CategoryScale,
+//   LinearScale,
+//   BarElement,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend
+// );
+
+
+// const Dashboard = () => {
+//   const [doughnutData, setDoughnutData] = useState({});
+//   // const [lineData, setLineData] = useState({});
+//   // const [barData, setBarData] = useState({});
+//   // const [tableData, setTableData] = useState([]);
+
+//   useEffect(() => {
+//     fetch('/api/inventory-status')
+//       .then(response => response.json())
+//       .then(data => setDoughnutData(data));
+
+//     // fetch('http://localhost:5000/api/stock-levels')
+//     //   .then(response => response.json())
+//     //   .then(data => setLineData(data));
+
+//     // fetch('http://localhost:5000/api/low-stock-products')
+//     //   .then(response => response.json())
+//     //   .then(data => setBarData(data));
+
+//     // fetch('http://localhost:5000/api/inventory-details')
+//     //   .then(response => response.json())
+//     //   .then(data => setTableData(data));
+//   }, []);
+
+//   return (
+//     <div className="dashboard">
+//       <div className="sidebar">
+//         <ul>
+//           <li>Home</li>
+//           <li>Inventory</li>
+//           <li>Reports</li>
+//           <li>Settings</li>
+//         </ul>
+//       </div>
+//       <div className="content">
+//         <div className="header">
+//           <h2>Local Inventory</h2>
+//         </div>
+//         <div className="widgets">
+//           <div className="widget">
+//             <h3>Inventory Status</h3>
+//             <Doughnut data={doughnutData} />
+//           </div>
+//           {/* <div className="widget">
+//             <h3>Stock Levels</h3>
+//             <Line data={lineData} />
+//           </div>
+//           <div className="widget">
+//             <h3>Low Stock Products</h3>
+//             <Bar data={barData} />
+//           </div> */}
+//         </div>
+//         {/* <div className="inventory-table">
+//           <h3>Inventory Details</h3>
+//           <table>
+//             <thead>
+//               <tr>
+//                 <th>Product</th>
+//                 <th>Category</th>
+//                 <th>Stock</th>
+//                 <th>Status</th>
+//               </tr>
+//             </thead>
+//             <tbody>
+//               {tableData.map((item, index) => (
+//                 <tr key={index}>
+//                   <td>{item.product}</td>
+//                   <td>{item.category}</td>
+//                   <td>{item.stock}</td>
+//                   <td>{item.status}</td>
+//                 </tr>
+//               ))}
+//             </tbody>
+//           </table>
+//         </div> */}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Dashboard;
+
 import React from 'react';
-import { FaHome, FaBox, FaChartBar, FaCog } from 'react-icons/fa';
 import { Doughnut, Line, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -29,7 +141,6 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
-  // Dummy data for charts and tables
   const doughnutData = {
     labels: ['Low Stock', 'In Stock'],
     datasets: [
@@ -70,10 +181,10 @@ const Dashboard = () => {
     <div className="dashboard">
       <div className="sidebar">
         <ul>
-          <li><FaHome /> Home</li>
-          <li><FaBox /> Inventory</li>
-          <li><FaChartBar /> Reports</li>
-          <li><FaCog /> Settings</li>
+          <li>Home</li>
+          <li>Inventory</li>
+          <li>Reports</li>
+          <li>Settings</li>
         </ul>
       </div>
       <div className="content">
